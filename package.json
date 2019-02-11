@@ -1,0 +1,16 @@
+{
+  "name": "docker-get-started",
+  "version": "1.0.0",
+  "description": "docker example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "3014zhangshuo",
+  "license": "ISC",
+  "dependencies": {
+    "ioredis": "^4.6.2",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0"
+  }
+}

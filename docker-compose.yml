@@ -1,0 +1,22 @@
+version: "2.2"
+services:
+  redis:
+    image: redis:latest
+
+  web:
+    scale: 2
+    build: .
+    environment:
+      - REDIS_HOST=redis://redis:6379/0
+    depends_on:
+      - redis
+
+  nginx:
+    image: nginx:latest
+    depends_on:
+      - web
+      - redis
+    ports:
+      - 4000:80
+    volumes:
+      - "./default.conf:/etc/nginx/conf.d/default.conf"
